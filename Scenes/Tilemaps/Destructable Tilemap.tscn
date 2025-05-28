@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7hublabyf7h5"]
+
+[ext_resource type="Texture2D" uid="uid://c6wtb4q3gqugb" path="res://Assets/Sprites/Tiles/dirt placeholder.png" id="1_xsj2j"]
+[ext_resource type="Script" uid="uid://duqcoek308tcg" path="res://Scenes/Tilemaps/destructable_tilemap.gd" id="2_82g50"]
+[ext_resource type="PackedScene" uid="uid://cchyr8xg17uns" path="res://Scenes/Tiles/Tile Base.tscn" id="2_jv14r"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jv14r"]
+texture = ExtResource("1_xsj2j")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_bvdph"]
+scenes/1/scene = ExtResource("2_jv14r")
+
+[sub_resource type="TileSet" id="TileSet_bvdph"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_jv14r")
+sources/1 = SubResource("TileSetScenesCollectionSource_bvdph")
+
+[node name="Destructable Tilemap" type="TileMapLayer" node_paths=PackedStringArray("timer")]
+tile_set = SubResource("TileSet_bvdph")
+script = ExtResource("2_82g50")
+tilescene = ExtResource("2_jv14r")
+timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(80, 16)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(193, 101)
+zoom = Vector2(2, 2)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
