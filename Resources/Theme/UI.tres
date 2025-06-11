@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://canndiyis1sd1"]
+
+[ext_resource type="FontFile" uid="uid://c6qlprpxs66bp" path="res://Assets/Fonts/Kenney Pixel.ttf" id="1_t1r14"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktjp8"]
+bg_color = Color(0.716296, 0.716296, 0.716296, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t1r14"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcrt6"]
+bg_color = Color(0.295867, 0.295867, 0.295866, 1)
+
+[resource]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_t1r14")
+Button/styles/hover = SubResource("StyleBoxFlat_ktjp8")
+Button/styles/normal = SubResource("StyleBoxFlat_t1r14")
+Button/styles/pressed = SubResource("StyleBoxFlat_rcrt6")
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_t1r14")

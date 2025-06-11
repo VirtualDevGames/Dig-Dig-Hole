@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="BuildingsResource" load_steps=2 format=3 uid="uid://cpwj60tyq8pqb"]
+
+[ext_resource type="Script" uid="uid://5dggirv08c1b" path="res://Resources/Buildings/buildings_resource.gd" id="1_ps0qu"]
+
+[resource]
+script = ExtResource("1_ps0qu")
+building_name = "Foundry"
+amount = 0
+base_cps = 1.0
+cps_multiplier_dict = Dictionary[int, int]({
+0: 1,
+25: 2,
+50: 3,
+75: 4,
+100: 5
+})
+base_cost = 0.0
+rate_of_cost_growth = 0.0
+metadata/_custom_type_script = "uid://5dggirv08c1b"

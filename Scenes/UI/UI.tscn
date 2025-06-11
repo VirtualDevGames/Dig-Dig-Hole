@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx4074xl00hfb"]
+
+[ext_resource type="Theme" uid="uid://canndiyis1sd1" path="res://Resources/Theme/UI.tres" id="1_wooci"]
+[ext_resource type="Script" uid="uid://6x8adikt73rd" path="res://Scenes/UI/ui.gd" id="2_akgwn"]
+[ext_resource type="PackedScene" uid="uid://bcmcxu4e60gu6" path="res://Scenes/UI/BuildingDataDisplay.tscn" id="4_b83rk"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_wooci")
+script = ExtResource("2_akgwn")
+
+[node name="gold value label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 5.0
+offset_right = 560.0
+offset_bottom = 29.0
+text = "0"
+
+[node name="gold name label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 21.0
+offset_right = 560.0
+offset_bottom = 45.0
+text = "gold"
+
+[node name="Mine Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 485.0
+offset_top = -85.0
+offset_right = 537.0
+offset_bottom = -53.0
+text = "mine"
+
+[node name="BuildingData" parent="." instance=ExtResource("4_b83rk")]
+layout_mode = 1
+offset_left = 502.0
+offset_top = 78.0
+offset_right = 502.0
+offset_bottom = 78.0
+
+[node name="BuildingData2" parent="." instance=ExtResource("4_b83rk")]
+layout_mode = 1
+offset_left = 502.0
+offset_top = 148.0
+offset_right = 502.0
+offset_bottom = 148.0
+building = 1
+
+[node name="BuildingData3" parent="." instance=ExtResource("4_b83rk")]
+layout_mode = 1
+offset_left = 502.0
+offset_top = 211.0
+offset_right = 502.0
+offset_bottom = 211.0
+building = 2
+
+[connection signal="pressed" from="Mine Button" to="." method="_on_mine_button_pressed"]

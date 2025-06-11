@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="BuildingsResource" load_steps=2 format=3 uid="uid://bibdvoddx1iq8"]
+
+[ext_resource type="Script" uid="uid://5dggirv08c1b" path="res://Resources/Buildings/buildings_resource.gd" id="1_qmqrf"]
+
+[resource]
+script = ExtResource("1_qmqrf")
+building_name = "House"
+amount = 0
+base_cps = 1.0
+cps_multiplier_dict = Dictionary[int, int]({
+0: 1,
+25: 2,
+50: 3,
+75: 4,
+100: 5
+})
+base_cost = 5.0
+rate_of_cost_growth = 3.0
+metadata/_custom_type_script = "uid://5dggirv08c1b"
