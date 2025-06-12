@@ -37,7 +37,7 @@ func _process(_delta : float) -> void:
 			print("---- end of bag -----")
 		print("---- end of array ----")
 
-func RemoveBag(_marble_bag : TileMarbleBag):
+func RemoveBag(_marble_bag : OLD_TileMarbleBag):
 	array_of_tile_marble_bags.erase(_marble_bag)
 
 func DestroyTileNext():
@@ -61,7 +61,7 @@ func ResetGrid():
 			new_tile.position = Vector2(k * space_between_tiles, i * space_between_tiles)
 			new_tile_array.append(new_tile)
 
-		var new_marble_bag = TileMarbleBag.new(new_tile_array)
+		var new_marble_bag = OLD_TileMarbleBag.new(new_tile_array)
 		new_marble_bag.EmptyBag.connect(RemoveBag)
 		array_of_tile_marble_bags.append(new_marble_bag)
 	starting_amount_of_arrays = array_of_tile_marble_bags.size()
